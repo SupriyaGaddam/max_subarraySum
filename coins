@@ -1,0 +1,16 @@
+def min_coins(coins,amount):
+    coins.sort(reverse=True)
+    num_coins=0
+    for i in coins:
+        if amount==0:
+            break
+        num=amount//i  
+        num_coins=num_coins+num
+        amount=amount%i
+    if(amount==0):
+        return num_coins 
+    else:
+        return -1
+coins=[1,5,10,25]
+amount=63
+print(min_coins(coins,amount))
