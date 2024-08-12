@@ -1,0 +1,12 @@
+def find_diff(nums,k):
+    nums_set=set(nums)
+    pairs=set()
+    for i  in nums:
+        if i+k in nums_set:
+            pairs.add((i,i+k))
+        if i-k in nums_set:
+            pairs.add((i,i-k))
+    return list(pairs)
+nums=[1,5,3,2,1]    
+k=2
+print(find_diff(nums,k))
